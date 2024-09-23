@@ -5,7 +5,13 @@
 @import "global";
 
 .header {
-  padding: 50px 0 50px;
+  height: 100vh;
+  padding-top: 50px;
+  position: relative;
+  background: url(../images/man-photo.png);
+  background-position: right 20vh;
+  background-repeat: no-repeat;
+  background-size: inherit;
   .burger {
     display: none;
     position: fixed;
@@ -158,11 +164,11 @@
 
 // Top
 .top {
-  background: url(../images/man-photo.png);
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 73vh;
+  // background: url(../images/man-photo.png);
+  // background-position: top right;
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  padding-top: 50px;
   &__title {
     font-family: "Sofia Sans Extra Condensed", sans-serif;
     font-weight: 700;
@@ -172,7 +178,7 @@
     color: var(--black);
     max-width: 1200px;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
   &__button {
     font-family: "Sofia Sans Extra Condensed";
@@ -193,7 +199,7 @@
     text-transform: uppercase;
     border-radius: 80px;
     margin-bottom: 20px;
-    &:hover .top__arrow{
+    &:hover .top__arrow {
       margin-right: 35px;
       // transform: translateX(15px);
     }
@@ -213,10 +219,113 @@
 .line {
   background-color: var(--blue);
   height: 8px;
-  width: 95%;
+  width: 93%;
   margin-left: auto;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   z-index: -1;
+}
+
+// Services
+.services {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #fff 100%), url("../images/bg-2.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  &__wrapper {
+    display: flex;
+  }
+  &__title {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 288px;
+    line-height: 230px;
+    text-transform: uppercase;
+    color: #fff;
+    max-width: 30%;
+    width: 100%;
+    padding-top: 65px;
+  }
+  &__description {
+    margin-top: 265px;
+    background-color: var(--white);
+    border-radius: 24px;
+    padding: 65px;
+    margin-left: auto;
+    max-width: 832px;
+    margin-bottom: 25px;
+    &-top {
+      margin-bottom: 50px;
+    }
+    &-center {
+      font-size: 24px;
+      margin-bottom: 50px;
+    }
+    &-link {
+      font-weight: 700;
+      color: var(--blue);
+    }
+    &-link:hover {
+      text-decoration: underline;
+    }
+  }
+  &__cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  &__card{
+    // height: 100%;
+    position: relative;
+  }
+  &__card-title {
+    font-family: "Sofia Sans Extra Condensed";
+    color: var(--black);
+    font-weight: 700;
+    font-size: 128px;
+    line-height: 123px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    display: flex;
+  }
+  &__card-list{
+    min-height: 330px;
+  }
+  &__card-item {
+    list-style: inside;
+    font-size: 24px;
+    line-height: 46px;
+    color: var(--black);
+  }
+  &__card-img{
+    margin-right: 30px;
+  }
+  &__button {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--blue);
+    display: block;
+    width: fit-content;
+    max-width: 400px;
+    min-width: 250px;
+    width: 100%;
+    padding: 20px 0;
+    background: transparent;
+    border: 2px solid;
+    border-color: linear-gradient(270deg, #48c0e0 0%, #48e0b0 100%);
+    transition: 1s;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 80px;
+    margin-bottom: 20px;
+    &:hover{
+      background: linear-gradient(270deg, #48c0e0 0%, #48e0b0 100%);
+      color: var(--white);
+      border: transparent;
+    }
+  }
 }
 
 @import "media";
