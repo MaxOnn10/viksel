@@ -4,5 +4,219 @@
 @import "functions";
 @import "global";
 
+.header {
+  padding: 50px 0 50px;
+  .burger {
+    display: none;
+    position: fixed;
+    top: 48.5px;
+    right: 31px;
+    z-index: 999;
+    color: var(--black);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    &__line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transition: transform 0.3s ease-in-out;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transition:
+        transform 0.3s ease-in-out,
+        top 0.3s ease-in-out;
+    }
+    &::before {
+      top: 0;
+    }
+    &::after {
+      top: calc(100% - 2px);
+    }
+    &--active {
+      .burger__line {
+        transform: scale(0);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+        top: 50%;
+        transition:
+          transform 0.3s ease-in-out,
+          top 0.3s ease-in-out;
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+        top: 50%;
+        transition:
+          transform 0.3s ease-in-out,
+          top 0.3s ease-in-out;
+      }
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__logo {
+    margin-right: 100px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+  &__menu-list {
+    font-family: "Inter";
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  &__menu-item {
+    position: relative;
+    width: fit-content;
+    text-decoration: none;
+    cursor: pointer;
+    a::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: var(--blue);
+      transition: width 0.3s ease-out;
+    }
+    a:hover:after,
+    :focus:after {
+      width: 100%;
+    }
+    &:hover {
+      color: var(--blue);
+      font-weight: 700;
+      transition: font-weight 0.3s ease-out;
+    }
+  }
+  &__menu-item:not(:last-child) {
+    margin-right: 30px;
+  }
+  &__right {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+  &__number-container {
+    margin-right: 65px;
+  }
+  &__number {
+    color: var(--black);
+  }
+  &__callback {
+    display: block;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-align: right;
+    color: var(--blue);
+  }
+  &__language {
+    appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+// Top
+.top {
+  background: url(../images/man-photo.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 73vh;
+  &__title {
+    font-family: "Sofia Sans Extra Condensed", sans-serif;
+    font-weight: 700;
+    font-size: 128px;
+    line-height: 123px;
+    text-transform: uppercase;
+    color: var(--black);
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  &__button {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 48px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    display: block;
+    width: fit-content;
+    max-width: 720px;
+    min-width: 250px;
+    width: 100%;
+    padding: 60px 0;
+    background: linear-gradient(270deg, #48c0e0 0%, #48e0b0 100%);
+    transition: 1s;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 80px;
+    margin-bottom: 20px;
+    &:hover .top__arrow{
+      margin-right: 35px;
+      // transform: translateX(15px);
+    }
+  }
+  &__arrow {
+    margin-right: 20px;
+    display: inline-block;
+    transition: margin-right 0.3s ease;
+    // transition: transform 0.3s ease;
+  }
+  &__subtitle {
+    font-size: 20px;
+    text-align: center;
+    max-width: 720px;
+  }
+}
+.line {
+  background-color: var(--blue);
+  height: 8px;
+  width: 95%;
+  margin-left: auto;
+  position: relative;
+  z-index: -1;
+}
 
 @import "media";
