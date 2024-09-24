@@ -269,11 +269,12 @@
       text-decoration: underline;
     }
   }
-  &__cards{
+  &__cards {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 45px;
   }
-  &__card{
+  &__card {
     // height: 100%;
     position: relative;
   }
@@ -287,7 +288,7 @@
     margin-bottom: 50px;
     display: flex;
   }
-  &__card-list{
+  &__card-list {
     min-height: 330px;
   }
   &__card-item {
@@ -296,7 +297,7 @@
     line-height: 46px;
     color: var(--black);
   }
-  &__card-img{
+  &__card-img {
     margin-right: 30px;
   }
   &__button {
@@ -320,12 +321,265 @@
     text-transform: uppercase;
     border-radius: 80px;
     margin-bottom: 20px;
-    &:hover{
+    &:hover {
       background: linear-gradient(270deg, #48c0e0 0%, #48e0b0 100%);
       color: var(--white);
-      border: transparent;
+      border: none;
     }
   }
+}
+.estate {
+  // height: 100vh;
+  background: #20242c;
+  position: relative;
+  &__top {
+    background: url("../images/bg-3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 75px;
+  }
+  &__title {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 288px;
+    line-height: 230px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 95px;
+  }
+  &__subtitle-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 0 75px;
+  }
+  &__subtitle {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 128px;
+    line-height: 123px;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  &__button-objects {
+    font-family: "Inter";
+    font-style: italic;
+    color: var(--blue);
+    font-size: 24px;
+    text-decoration: underline;
+    text-align: center;
+    // display: block;
+    width: fit-content;
+    max-width: 400px;
+    min-width: 250px;
+    width: 100%;
+    padding: 20px 0;
+    border: 2px solid #606888;
+    border-radius: 80px;
+  }
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 45px;
+  }
+  &__card {
+    // height: 100%;
+    position: relative;
+  }
+  &__card-list {
+    min-height: 250px;
+  }
+  &__card-item {
+    list-style: inside;
+    font-size: 32px;
+    line-height: 46px;
+    color: var(--white);
+    margin-bottom: 35px;
+    max-width: 680px;
+    width: 100%;
+  }
+  &__button {
+    position: relative;
+    padding: 30px 0;
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    display: block;
+    width: 100%;
+    max-width: 515px;
+    min-width: 250px;
+    background: transparent;
+    border: none; /* Убираем стандартную границу */
+    border-radius: 80px;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: inherit;
+      padding: 2px;
+      background: linear-gradient(270deg, #48c0e0 0%, #48e0b0 100%);
+      z-index: -1; /* Псевдоэлемент ниже кнопки */
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0); /* Создание маски */
+      mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude; /* Оставляем только границу */
+    }
+  }
+  &__img-container {
+    position: relative;
+    margin-bottom: 35px;
+  }
+  &__slide-img {
+  }
+  &__slide-square {
+    position: absolute;
+    bottom: -31px;
+    right: 0;
+    width: 128px;
+    height: 64px;
+    color: var(--white);
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+  }
+  &__slide-name {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #fff;
+    // margin-bottom: 15px;
+  }
+  &__slide-price {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 400;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 25px;
+  }
+  &__list-item {
+    list-style: inside;
+    font-size: 20px;
+    line-height: 29px;
+    color: var(--white);
+    margin-bottom: 35px;
+  }
+  &__slide-area {
+  }
+  &__slide-feature {
+  }
+  &__slide-year {
+  }
+}
+
+.container-swiper {
+  max-width: 1664px;
+  margin: 0 auto;
+  margin-right: 0;
+  padding: 0 15px;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+  // margin-right: -15px; // Чтобы правильно выровнять слайдер
+  // width: calc(100% + 15px); // Увеличиваем ширину на общие отступы
+}
+
+.swiper-slide {
+  max-width: 480px;
+  width: 100%;
+  height: 550px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  // justify-content: flex-start;
+  // align-items: center;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  // object-fit: cover;
+  object-fit: contain;
+}
+
+.swiper-slide--last-visible {
+  position: relative;
+}
+
+.swiper-slide--last-visible::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  // background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+.swiper-slide .estate__slide-img {
+  filter: brightness(100%); // Полная яркость в обычном состоянии
+  transition: filter 0.5s ease; // Плавный переход для обратного эффекта
+}
+.swiper-slide--last-visible {
+  .estate__slide-img {
+    filter: brightness(50%); // Уменьшение яркости до 50%, создавая затемнение
+    transition: filter 0.5s ease; // Плавный переход для яркости
+  }
+}
+.swiper-slide .estate__slide-square,
+.swiper-slide .estate__slide-name,
+.swiper-slide .estate__slide-price,
+.swiper-slide .estate__slide-list,
+.swiper-slide .estate__list-item {
+  color: var(--white);
+  transition: color 0.5s ease;
+}
+
+.swiper-slide--last-visible .estate__slide-square,
+.swiper-slide--last-visible .estate__slide-name,
+.swiper-slide--last-visible .estate__slide-price,
+.swiper-slide--last-visible .estate__slide-list,
+.swiper-slide--last-visible .estate__list-item {
+  position: relative;
+  color: #404858;
+  transition: color 0.5s ease;
+  z-index: 1;
+}
+.swiper-slide--last-visible .estate__slide-square {
+  position: absolute;
+  bottom: -31px;
+  right: 0;
+  width: 128px;
+  height: 64px;
+  color: var(--white);
+  // background-color: var(--blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
 }
 
 @import "media";
