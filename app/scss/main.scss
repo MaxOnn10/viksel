@@ -170,7 +170,7 @@
   // background-size: contain;
   padding-top: 50px;
   &__title {
-    font-family: "Sofia Sans Extra Condensed", sans-serif;
+    font-family: "Sofia Sans Extra Condensed";
     font-weight: 700;
     font-size: 128px;
     line-height: 123px;
@@ -332,6 +332,9 @@
   // height: 100vh;
   background: #20242c;
   position: relative;
+  &__slide-img {
+    filter: blur(64px);
+  }
   &__top {
     background: url("../images/bg-3.jpg");
     background-repeat: no-repeat;
@@ -413,7 +416,7 @@
     max-width: 515px;
     min-width: 250px;
     background: transparent;
-    border: none; /* Убираем стандартную границу */
+    border: none;
     border-radius: 80px;
     z-index: 1;
     &::before {
@@ -490,10 +493,11 @@
 }
 
 .container-swiper {
-  max-width: 1664px;
+  max-width: 1780px;
   margin: 0 auto;
   margin-right: 0;
   padding: 0 15px;
+  padding-bottom: 80px;
 }
 .swiper {
   width: 100%;
@@ -505,7 +509,7 @@
 .swiper-slide {
   max-width: 480px;
   width: 100%;
-  height: 550px;
+  min-height: 550px;
   font-size: 18px;
   display: flex;
   flex-direction: column;
@@ -516,11 +520,13 @@
 }
 
 .swiper-slide img {
+  margin-top: 10px;
   display: block;
   width: 100%;
   height: 100%;
   // object-fit: cover;
   object-fit: contain;
+  transition: box-shadow 0.2s linear;
 }
 
 .swiper-slide--last-visible {
@@ -541,6 +547,19 @@
   filter: brightness(100%); // Полная яркость в обычном состоянии
   transition: filter 0.5s ease; // Плавный переход для обратного эффекта
 }
+.swiper-slide:hover .estate__slide-name {
+  text-decoration: underline;
+}
+.swiper-slide:hover .estate__slide-square{
+  color: var(--blue);
+  background: var(--white);
+}
+// .swiper-slide:hover .estate__slide-img {
+//   opacity: 1;
+//   transition: 0.5s;
+//   box-shadow: 0 0 10px var(--white);
+// }
+
 .swiper-slide--last-visible {
   .estate__slide-img {
     filter: brightness(50%); // Уменьшение яркости до 50%, создавая затемнение
@@ -580,6 +599,204 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 35px;
+}
+
+// Results
+.results {
+  position: relative;
+  padding-top: 75px;
+  .line-top {
+    background-color: var(--blue);
+    height: 8px;
+    width: 93%;
+    margin-left: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+  }
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 120px;
+  }
+  &__wrapper--2{
+    padding-bottom: 0;
+  }
+  &__img{
+    transform: translateY(-15vh);
+  }
+  &__number {
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 288px;
+    line-height: 230px;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 55px;
+  }
+  &__text {
+    font-size: 32px;
+    line-height: 46px;
+    color: var(--black);
+    max-width: 640px;
+    width: 100%;
+  }
+}
+
+// Permission
+.permission {
+  background: url("../images/geodesy.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 165px;
+  &__title {
+    padding-top: 80px;
+  }
+  &__wrapper {
+    max-width: 50%;
+    width: 100%;
+    margin-left: auto;
+  }
+  &__title {
+    font-family: "Sofia Sans Extra Condensed";
+    color: var(--white);
+    font-weight: 700;
+    font-size: 128px;
+    line-height: 123px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 144%;
+    color: var(--white);
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 55px;
+  }
+  &__button {
+    position: relative;
+    padding: 30px 0;
+    font-family: "Sofia Sans Extra Condensed";
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    min-width: 250px;
+    background: linear-gradient(270deg, #48c0e0 0%, #48e0b0 100%);
+    border: none;
+    border-radius: 80px;
+    z-index: 1;
+  }
+}
+
+// Footer
+.footer {
+  background-color: #20242c;
+  color: var(--white);
+  padding: 65px 0 130px;
+  &__menu-link {
+    font-size: 24px;
+  }
+  &__nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 90px;
+  }
+  &__menu-list {
+    font-family: "Inter";
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  &__menu-item {
+    position: relative;
+    width: fit-content;
+    text-decoration: none;
+    cursor: pointer;
+    a::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background-color: var(--blue);
+      transition: width 0.3s ease-out;
+    }
+    a:hover:after,
+    :focus:after {
+      width: 100%;
+    }
+    &:hover {
+      color: var(--blue);
+      font-weight: 700;
+      transition: font-weight 0.3s ease-out;
+    }
+  }
+  &__menu-item:not(:last-child) {
+    margin-right: 30px;
+  }
+  &__bottom-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__name {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 192%;
+    color: var(--white);
+  }
+  // .container-results{
+  //   max-width: 1664px;
+  //   margin: 0 auto;
+  //   margin-left: 0;
+  //   padding: 0 15px;
+  //   padding-bottom: 80px;
+  // }
+  &__rights {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 192%;
+    color: var(--white);
+  }
+  &__bottom-right {
+    color: var(--white);
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__mail {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 192%;
+    text-decoration: underline;
+    color: var(--blue);
+  }
+  &__phone {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 192%;
+    color: var(--white);
+  }
+  &__address {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 192%;
+    color: var(--white);
+  }
 }
 
 @import "media";

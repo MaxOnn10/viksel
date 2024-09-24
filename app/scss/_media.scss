@@ -1,12 +1,17 @@
 @media (min-width: 1921px) {
     .header{
         height: inherit;
+        .top__subtitle{
+            padding-bottom: 75px;
+        }
     }
     .services{
         // background-size: cover;
     }
     .estate{
-        
+        .container-swiper{
+            max-width: 1920px;
+        }
     }
 }
 
