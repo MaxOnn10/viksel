@@ -172,8 +172,8 @@
   &__title {
     font-family: "Sofia Sans Extra Condensed";
     font-weight: 700;
-    font-size: 128px;
-    line-height: 123px;
+    font-size: 6.667vw;
+    line-height: 96%;
     text-transform: uppercase;
     color: var(--black);
     max-width: 1200px;
@@ -238,11 +238,11 @@
   &__title {
     font-family: "Sofia Sans Extra Condensed";
     font-weight: 700;
-    font-size: 288px;
-    line-height: 230px;
+    font-size: 15vw;
+    line-height: 80%;
     text-transform: uppercase;
     color: #fff;
-    max-width: 30%;
+    // max-width: 30%;
     width: 100%;
     padding-top: 65px;
   }
@@ -277,12 +277,13 @@
   &__card {
     // height: 100%;
     position: relative;
+    margin-bottom: 25px;
   }
   &__card-title {
     font-family: "Sofia Sans Extra Condensed";
     color: var(--black);
     font-weight: 700;
-    font-size: 128px;
+    font-size: 6.667vw;
     line-height: 123px;
     text-transform: uppercase;
     margin-bottom: 50px;
@@ -344,8 +345,8 @@
   &__title {
     font-family: "Sofia Sans Extra Condensed";
     font-weight: 700;
-    font-size: 288px;
-    line-height: 230px;
+    font-size: 15vw;
+    line-height: 80%;
     text-transform: uppercase;
     color: var(--white);
     margin-bottom: 95px;
@@ -360,8 +361,8 @@
   &__subtitle {
     font-family: "Sofia Sans Extra Condensed";
     font-weight: 700;
-    font-size: 128px;
-    line-height: 123px;
+    font-size: 6.667vw;
+    line-height: 96%;
     color: var(--white);
     text-transform: uppercase;
   }
@@ -629,8 +630,8 @@
   &__number {
     font-family: "Sofia Sans Extra Condensed";
     font-weight: 700;
-    font-size: 288px;
-    line-height: 230px;
+    font-size: 15vw;
+    line-height: 80%;
     text-transform: uppercase;
     color: var(--blue);
     margin-bottom: 55px;
@@ -650,9 +651,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 165px;
-  &__title {
-    padding-top: 80px;
-  }
   &__wrapper {
     max-width: 50%;
     width: 100%;
@@ -662,9 +660,10 @@
     font-family: "Sofia Sans Extra Condensed";
     color: var(--white);
     font-weight: 700;
-    font-size: 128px;
-    line-height: 123px;
+    font-size: 6.667vw;
+    line-height: 96%;
     text-transform: uppercase;
+    padding-top: 80px;
     margin-bottom: 50px;
   }
   &__text {

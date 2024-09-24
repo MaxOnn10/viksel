@@ -340,7 +340,7 @@
             </div>
             <div class="container-results">
                 <div class="results__wrapper results__wrapper--2">
-                    <div class="results__item">
+                    <div class="results__item results__item--img">
                         <img class="results__img" src="images/flag.png" alt="">
                     </div>
                     <div class="results__item">
@@ -431,6 +431,13 @@
             //     el: ".swiper-pagination",
             //     clickable: true,
             //   },
+            breakpoints: {
+                // when window width is <= 767px (mobile screens)
+                767: {
+                    slidesPerView: 1, // показывать 1 слайд на мобильных
+                    spaceBetween: 16 // можно изменить расстояние между слайдами
+                }
+            },
             on: {
                 init: function () {
                     setTimeout(setLastVisibleSlide, 100);
