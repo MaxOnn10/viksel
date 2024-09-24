@@ -431,11 +431,23 @@
             //     el: ".swiper-pagination",
             //     clickable: true,
             //   },
+            // breakpoints: {
+            //     767: {
+            //         slidesPerView: 1, // показывать 1 слайд на мобильных
+            //         spaceBetween: 16 // можно изменить расстояние между слайдами
+            //     }
+            // },
+
             breakpoints: {
-                // when window width is <= 767px (mobile screens)
-                767: {
-                    slidesPerView: 1, // показывать 1 слайд на мобильных
-                    spaceBetween: 16 // можно изменить расстояние между слайдами
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 40
                 }
             },
             on: {
