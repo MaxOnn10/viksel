@@ -9,6 +9,7 @@ burger.addEventListener('click', function () {
     document.querySelector(".header__menu").classList.toggle("active"),
     document.querySelector(".header__menu-list").classList.toggle("active"),
     document.querySelector(".header__menu-item").classList.toggle("active"),
+    document.querySelector(".header__right").classList.toggle("active"),
     body.classList.toggle("disable-scroll");
   
   });
@@ -18,6 +19,7 @@ burger.addEventListener('click', function () {
       document.querySelector(".header__nav").classList.remove("active"),
       document.querySelector(".header__menu").classList.remove("active"),
       document.querySelector(".header__menu-list").classList.remove("active"),
+      document.querySelector(".header__right").classList.remove("active"),
       burger.classList.remove("burger--active"),
       item.classList.remove("active"),
       body.classList.remove("disable-scroll");
