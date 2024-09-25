@@ -258,13 +258,14 @@
         &__card-img {
             width: 100px;
             height: auto;
+            margin-right: 15px;
         }
         &__card-title {
             display: flex;
             justify-content: start;
             align-items: center;
-            font-size: 32px;
-            line-height: 38px;
+            font-size: 45px;
+            line-height: 51px;
             margin-bottom: 10px;
         }
         &__card-list {
