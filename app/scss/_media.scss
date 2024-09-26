@@ -131,6 +131,8 @@
             z-index: 999;
             max-width: 90%;
             margin-left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             .header__number {
                 color: var(--white);
             }
@@ -172,14 +174,61 @@
 }
 
 @media (max-width: 991.98px) {
+    .modal{
+        &__title{
+            font-size: 9vw;
+        }
+    }
     .top {
         &__title {
             max-width: 76%;
         }
     }
+    .services {
+        &__card-list {
+            min-height: 0;
+            margin-bottom: 50px;
+        }
+    }
+    .estate {
+        &__cards {
+            grid-template-columns: 1fr;
+            margin-left: 25px;
+        }
+        &__button {
+            margin: 0 auto;
+        }
+    }
 }
 
 @media (max-width: 768px) {
+    .modal{
+        &__wrapper{
+            grid-template-columns: 1fr;
+        }
+        &__title{
+            font-size: 48px;
+            margin-bottom: 25px;
+        }
+        &__text{
+            font-size: 18px;
+        }
+        .promo__form-input{
+            font-size: 24px;
+            padding: 25px 0;
+        }
+        .promo__form-button{
+            font-size: 24px;
+            padding: 25px 0;
+            margin-bottom: 30px;
+        }
+        &__phone{
+            font-size: 18px;
+        }
+        &__number{
+            font-size: 24px;
+        }
+    }
     .header {
         // background: none;
         background-size: contain;
@@ -284,11 +333,12 @@
         max-width: 100%;
     }
     .estate {
-        &__title{
+        &__title {
             margin-bottom: 75px;
         }
         &__cards {
             grid-template-columns: 1fr;
+            margin-left: 5px;
         }
         &__card-item {
             font-size: 18px;
@@ -297,6 +347,7 @@
         &__subtitle-wrapper {
             flex-wrap: wrap;
             gap: 20px;
+            padding: 100px 0 25px;
         }
         &__top {
             background-size: inherit;
@@ -308,6 +359,7 @@
             font-size: 18px;
             padding: 10px 0;
             margin-top: 10px;
+            margin: 0 auto;
         }
     }
     .permission {
@@ -347,7 +399,7 @@
         &__item-img {
             display: none;
         }
-        &__number{
+        &__number {
             font-size: 64px;
             margin-bottom: 10px;
         }

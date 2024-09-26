@@ -36,10 +36,11 @@
     <!-- <link rel="preload" href="fonts/MonumentExtended-Regular.woff2" as="font" type="font/woff2" crossorigin> -->
     <link rel="preload" href="css/libs.min.css" as="style">
     <link rel="preload" href="css/main.min.css" as="style">
-    <link rel="preload" href="js/main.min.js" as="script">
+    <!-- <link rel="preload" href="js/main.min.js" as="script"> -->
 
     <link rel="stylesheet" href="css/libs.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <link rel="stylesheet" href="css/main.min.css">
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -49,7 +50,51 @@
 </head>
 
 <body>
-
+    <div class="modal" id="dialog-content" style="display:none;max-width:fit-content;height: fit-content;">
+        <div class="modal__wrapper">
+            <div class="modal__wrapper-item">
+                <p class="modal__title">
+                    Бесплатная консультация с экспертом
+                </p>
+                <p class="modal__text">
+                    Заполните форму и наш специалист свяжется с вами в течении 30 минут в рабочее время!
+                    <br>
+                    <br>
+                    Фундаментально изучим ваш конкретный запрос и предложим наиболее эффективные пути решения в
+                    кратчайшие
+                    сроки.
+                </p>
+            </div>
+            <div class="modal__wrapper-item">
+                <div class="promo__form popup">
+                    <form action="mail.php" class="promo__form-content form" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="promo__form-item">
+                            <input class="promo__form-input input-name" type="text" data-validate-field="name"
+                                name="name1" placeholder="Ваше имя">
+                        </div>
+                        <div class="promo__form-item">
+                            <input class="promo__form-input input-tel" type="tel" data-validate-field="tel" name="Phone"
+                                placeholder="Ваш номер телефона">
+                        </div>
+                        <div class="promo__form-item">
+                            <input class="promo__form-input input-mail" type="email" data-validate-field="email"
+                                name="Email" placeholder="Ваша почта">
+                        </div>
+                        <button class="btn-reset btn-hover promo__form-button" type="submit">
+                            Получить консультацию
+                        </button>
+                    </form>
+                </div>
+                <div class="modal__phone">
+                    <img class="modal__phone-img" src="images/Phone.svg" alt="">
+                    либо позвоните по номеру:
+                    <br>
+                    <a class="modal__number" href="tel:+38268051777">+382 <b>68 051 777</b></a>
+                </div>
+            </div>
+        </div>
+    </div>
     <header class="header" id="header">
         <button class="burger" aria-label="burger-menu">
             <span class="burger__line"></span>
@@ -94,10 +139,9 @@
                 </div>
                 <div class="header__right">
                     <div class="header__number-container">
-                        <a class="header__number" href="tel:+38268051777"><img src="images/Phone.svg" alt="">+382<b> 68
-                                051 777</b></a>
+                        <a class="header__number" href="tel:+38268051777"><img src="images/Phone.svg" alt="">+382<b> 68 051 777</b></a>
                         <br>
-                        <a class="header__callback" href="/">обратный звонок</a>
+                        <a class="header__callback" data-fancybox data-src="#dialog-content">обратный звонок</a>
                     </div>
                     <select class="header__language">
                         <option value="">RU</option>
@@ -110,7 +154,8 @@
                 <h1 class="top__title">
                     Оформление ВНЖ и организация бизнеса в Черногории «под ключ»
                 </h1>
-                <a class="top__button" href="/"><span class="top__arrow">⟶</span>Бесплатная консультация</a>
+                <button class="top__button" data-fancybox data-src="#dialog-content"><span
+                        class="top__arrow">⟶</span>Бесплатная консультация</button>
                 <p class="top__subtitle">
                     наш менеджер свяжется с вами в течении 30 минут
                 </p>
@@ -132,8 +177,9 @@
                                 бизнеса в Черногории.</p>
                             <p class="services__description-center">Услуга включает в себя консультирование, техническую
                                 документацию, сопровождение переводчика.</p>
-                            <a class="services__description-link" href="/"><span class="services__arrow">⟶</span>
-                                Консультация специалиста</a>
+                            <button class="services__description-link" data-fancybox data-src="#dialog-content"><span
+                                    class="services__arrow">⟶</span>
+                                Консультация специалиста</button>
                         </div>
                     </div>
                 </div>
@@ -151,7 +197,7 @@
                             <li class="services__card-item">апостиль, легализация документов, переводы</li>
                             <li class="services__card-item">визы и консультации</li>
                         </ul>
-                        <a href="/" class="services__button">Узнать подробности</a>
+                        <button class="services__button" data-fancybox data-src="#dialog-content">Узнать подробности</button>
                     </div>
                     <div class="services__card" id="business">
                         <h3 class="services__card-title"><img class="services__card-img" src="images/icon-2.svg"
@@ -163,7 +209,7 @@
                             <li class="services__card-item">сопровождение по банковским и финансовым аспектам</li>
                             <li class="services__card-item">организация и сопровождение деловых переговоров</li>
                         </ul>
-                        <a href="/" class="services__button">Узнать подробности</a>
+                        <button class="services__button" data-fancybox data-src="#dialog-content">Узнать подробности</button>
                     </div>
                 </div>
             </div>
@@ -193,7 +239,7 @@
                             </ul>
                         </div>
                     </div>
-                    <a href="/" class="estate__button">Подробнее о наших услугах</a>
+                    <button class="estate__button" data-fancybox data-src="#dialog-content">Подробнее о наших услугах</button>
                 </div>
                 <div class="container">
                     <div class="estate__subtitle-wrapper">
@@ -369,10 +415,10 @@
                         Разрешение на Строительство
                     </h2>
                     <p class="permission__text">
-                        сопровождение и помощь в получении необходимой для строительства документации, геодезические
+                        Сопровождение и помощь в получении необходимой для строительства документации, геодезические
                         исследования, прочее
                     </p>
-                    <a href="/" class="permission__button">Оформить заявку</a>
+                    <button class="permission__button" data-fancybox data-src="#dialog-content">Оформить заявку</button>
                 </div>
             </div>
         </section>
@@ -437,21 +483,16 @@
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script defer src="js/inputmask.min.js"></script>
+    <script defer src="js/just-validate.min.js"></script>
     <script>
+        Fancybox.bind('[data-fancybox]', {
+            // Custom options for all galleries
+        });
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 3.5,
             spaceBetween: 32,
-            //   pagination: {
-            //     el: ".swiper-pagination",
-            //     clickable: true,
-            //   },
-            // breakpoints: {
-            //     767: {
-            //         slidesPerView: 1, // показывать 1 слайд на мобильных
-            //         spaceBetween: 16 // можно изменить расстояние между слайдами
-            //     }
-            // },
-
             breakpoints: {
                 // when window width is >= 320px
                 320: {
@@ -460,8 +501,12 @@
                 },
                 // when window width is >= 640px
                 640: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                     spaceBetween: 40
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
                 }
             },
             on: {
@@ -482,6 +527,12 @@
             slides.forEach(function (slide) {
                 slide.classList.remove('swiper-slide--last-visible');
             });
+
+            // Проверяем ширину экрана
+            if (window.innerWidth > 1920) {
+                // Если ширина экрана больше 1920px, не добавляем затемнение
+                return;
+            }
 
             // Рассчитываем индекс 4-го видимого слайда
             var lastVisibleIndex = Math.floor(swiper.activeIndex + 3);
