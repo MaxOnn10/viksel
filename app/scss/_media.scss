@@ -78,6 +78,9 @@
             max-width: 52%;
         }
     }
+    .foros .header .top{
+        height: 89.56vh;
+    }
 }
 
 @media (max-width: 1125px) {
@@ -171,11 +174,30 @@
             margin-left: 5%;
         }
     }
+    .foros {
+        .header{
+            .top__title-span{
+                top: 50%;
+            }
+        }
+        .intro {
+            &__title{
+                font-size: 68px;
+            }
+            &__title-img{
+                width: 155px;
+                height: 155px;
+            }
+            .mySwiper {
+                max-width: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 991.98px) {
-    .modal{
-        &__title{
+    .modal {
+        &__title {
             font-size: 9vw;
         }
     }
@@ -199,33 +221,37 @@
             margin: 0 auto;
         }
     }
+    .foros .header .top{
+        background-position: center;
+    }
+
 }
 
 @media (max-width: 768px) {
-    .modal{
-        &__wrapper{
+    .modal {
+        &__wrapper {
             grid-template-columns: 1fr;
         }
-        &__title{
+        &__title {
             font-size: 48px;
             margin-bottom: 25px;
         }
-        &__text{
+        &__text {
             font-size: 18px;
         }
-        .promo__form-input{
+        .promo__form-input {
             font-size: 24px;
             padding: 25px 0;
         }
-        .promo__form-button{
+        .promo__form-button {
             font-size: 24px;
             padding: 25px 0;
             margin-bottom: 30px;
         }
-        &__phone{
+        &__phone {
             font-size: 18px;
         }
-        &__number{
+        &__number {
             font-size: 24px;
         }
     }
@@ -430,6 +456,27 @@
     }
     .footer__bottom-right {
         text-align: center;
+    }
+    
+    .foros .header .top__title{
+        font-size: 115px;
+    }
+    .foros .header .top__title-span{
+        font-size: 85px;
+    }
+    .foros .intro{
+        padding: 50px 0 50px;
+    }
+    .foros .intro__text{
+        font-size: 24px;
+    }
+    .foros .intro__title-img{
+        // width: 55px;
+        // height: 55px;
+        display: none;
+    }
+    .foros .intro__title{
+        font-size: 48px;
     }
 }
 

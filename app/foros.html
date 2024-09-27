@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Facebook tags-->
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="" />
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- Fav Icon -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest"> -->
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <title>Foros village</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Splash&display=swap" rel="stylesheet">
+
+    <!-- Preload -->
+    <!-- <link rel="preload" href="images/light.webp" as="image"> -->
+    <!-- <link rel="preload" href="fonts/MonumentExtended-Regular.woff2" as="font" type="font/woff2" crossorigin> -->
+    <link rel="preload" href="css/libs.min.css" as="style">
+    <link rel="preload" href="css/main.min.css" as="style">
+    <!-- <link rel="preload" href="js/main.min.js" as="script"> -->
+
+    <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <!-- <link rel="stylesheet" href="css/swipertest.css"> -->
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script> -->
+
+    <!-- Critical Stytes  -->
+</head>
+
+<body class="foros">
+    <div class="modal" id="dialog-content" style="display:none;max-width:fit-content;height: fit-content;">
+        <div class="modal__wrapper">
+            <div class="modal__wrapper-item">
+                <p class="modal__title">
+                    Бесплатная консультация с экспертом
+                </p>
+                <p class="modal__text">
+                    Заполните форму и наш специалист свяжется с вами в течении 30 минут в рабочее время!
+                    <br>
+                    <br>
+                    Фундаментально изучим ваш конкретный запрос и предложим наиболее эффективные пути решения в
+                    кратчайшие
+                    сроки.
+                </p>
+            </div>
+            <div class="modal__wrapper-item">
+                <div class="promo__form popup">
+                    <form action="mail.php" class="promo__form-content form" method="POST"
+                        enctype="multipart/form-data">
+                        <div class="promo__form-item">
+                            <input class="promo__form-input input-name" type="text" data-validate-field="name"
+                                name="name1" placeholder="Ваше имя">
+                        </div>
+                        <div class="promo__form-item">
+                            <input class="promo__form-input input-tel" type="tel" data-validate-field="tel" name="Phone"
+                                placeholder="Ваш номер телефона">
+                        </div>
+                        <div class="promo__form-item">
+                            <input class="promo__form-input input-mail" type="email" data-validate-field="email"
+                                name="Email" placeholder="Ваша почта">
+                        </div>
+                        <button class="btn-reset btn-hover promo__form-button" type="submit">
+                            Получить консультацию
+                        </button>
+                    </form>
+                </div>
+                <div class="modal__phone">
+                    <img class="modal__phone-img" src="images/Phone.svg" alt="">
+                    либо позвоните по номеру:
+                    <br>
+                    <a class="modal__number" href="tel:+38268051777">+382 <b>68 051 777</b></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="header" id="header">
+        <button class="burger" aria-label="burger-menu">
+            <span class="burger__line"></span>
+        </button>
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="images/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="header__nav">
+                    <nav class="header__menu">
+                        <ul class="header__menu-list">
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" href="#immigration">
+                                    Иммиграция
+                                </a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" href="#business">
+                                    Бизнес
+                                </a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" href="#estate">
+                                    Недвижимость
+                                </a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" href="#results">
+                                    Наши проекты
+                                </a>
+                            </li>
+                            <li class="header__menu-item">
+                                <a class="header__menu-link" href="#footer">
+                                    Контакты
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header__right">
+                    <div class="header__number-container">
+                        <a class="header__number" href="tel:+38268051777"><img src="images/Phone.svg" alt="">+382<b> 68
+                                051 777</b></a>
+                        <br>
+                        <a class="header__callback" data-fancybox data-src="#dialog-content">обратный звонок</a>
+                    </div>
+                    <select class="header__language">
+                        <option value="">RU</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <div class="container">
+                <h1 class="top__title">
+                    Foros
+                </h1>
+                <span class="top__title-span">village</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <!-- <img class="intro__bg" src="images/cloud-bottom.png" alt=""> -->
+            <div class="container">
+                <div class="intro__wrapper">
+                    <img class="intro__title-img" src="images/olive.svg" alt="">
+                    <h2 class="intro__title">
+                        Just follow your dream
+                    </h2>
+                    <img class="intro__title-img" src="images/shell.svg" alt="">
+                </div>
+            </div>
+            <div class="collection">
+                <div class="container">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="content swiper-slide">
+                                <img src="images/house-1.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-2.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-3.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-4.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-1.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-2.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-3.png" alt="">
+                            </div>
+                            <div class="content swiper-slide">
+                                <img src="images/house-4.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <p class="intro__text">
+                    Krimovica, a serene village in Montenegro, offers a private community of 14 modern villas,
+                    surrounded by stunning mountain and sea views. Each home is designed to provide comfort, blending
+                    natural materials with contemporary architecture. Located just a short drive from the Adriatic coast
+                    and popular towns like Budva and Kotor, it provides the perfect mix of seclusion and convenience.
+                    The peaceful setting is ideal for those seeking tranquility, while still being close to local
+                    amenities, beaches, and tourist attractions.
+                </p>
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+    <footer class="footer" id="footer">
+        <div class="container">
+            <!-- <div class="footer__top">
+                <div class="footer__nav">
+
+                </div>
+            </div> -->
+            <div class="footer__nav">
+                <nav class="footer__menu">
+                    <ul class="footer__menu-list">
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link" href="#immigration">
+                                Иммиграция
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link" href="#business">
+                                Бизнес
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link" href="#estate">
+                                Недвижимость
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link" href="#results">
+                                Наши проекты
+                            </a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a class="footer__menu-link" href="#footer">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-wrapper">
+                    <div class="footer__bottom-item footer__bottom-left">
+                        <p class="footer__name">VIKSEL Group DOO</p>
+                        <p class="footer__rights">Все права защищены</p>
+                    </div>
+                    <div class="footer__bottom-item footer__bottom-center">
+                        <img class="footer__logo" src="images/logo-footer.svg" alt="">
+                    </div>
+                    <div class="footer__bottom-item footer__bottom-right">
+                        <a class="footer__mail" href="mailto:info@viksel.me">info@viksel.me</a>
+                        <a class="footer__phone" href="tel:+38268051777">+382 68 051 777</a>
+                        <p class="footer__address">53 Mediteranska, Budva</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script defer src="js/inputmask.min.js"></script>
+    <script defer src="js/just-validate.min.js"></script>
+    <!-- <script>
+        Fancybox.bind('[data-fancybox]', {
+            // Custom options for all galleries
+        });
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 50,
+            
+            // effect: "coverflow",
+            // grabCursor: true,
+            // centeredSlides: true,
+            loop: true,
+            // coverflowEffect: {
+            //     rotate: 0,
+            //     stretch: 0,
+            //     depth: 150,
+            //     modifier: 2.5,
+            //     slideShadows: true,
+            // }
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 640px
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 40
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            },
+            on: {
+                init: function () {
+                    setTimeout(setLastVisibleSlide, 100);
+                },
+                slideChange: function () {
+                    setLastVisibleSlide();
+                }
+            }
+        });
+
+            // Функция для затемнения именно 4-го слайда
+            function setLastVisibleSlide() {
+                var slides = document.querySelectorAll('.swiper-slide');
+
+                // Убираем затемнение со всех слайдов
+                slides.forEach(function (slide) {
+                    slide.classList.remove('swiper-slide--last-visible');
+                });
+
+                // Проверяем ширину экрана
+                if (window.innerWidth > 1920) {
+                    // Если ширина экрана больше 1920px, не добавляем затемнение
+                    return;
+                }
+
+                // Рассчитываем индекс 4-го видимого слайда
+                var lastVisibleIndex = Math.floor(swiper.activeIndex + 3);
+
+                // Если такой слайд существует, добавляем затемнение
+                if (slides[lastVisibleIndex]) {
+                    slides[lastVisibleIndex].classList.add('swiper-slide--last-visible');
+                }
+            }
+        
+    </script> -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            loop: true,
+            slidesPerView: "2",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 150,
+                modifier: 4,
+                // slideShadows: true,
+            },
+            breakpoints: {
+                // when window width is >= 320px
+                // 320: {
+                //     slidesPerView: 3,
+                //     // spaceBetween: 20
+                // },
+                // when window width is >= 640px
+                // 640: {
+                //     slidesPerView: 2,
+                //     spaceBetween: 40
+                // },
+                // 992: {
+                //     slidesPerView: 3,
+                //     spaceBetween: 30
+                // }
+            }
+        });
+    </script>
+    <script defer src="js/main.min.js"></script>
+</body>
+
+</html>
